@@ -9,7 +9,7 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="Curve2D" id="Curve2D_24sgl"]
+[sub_resource type="Curve2D" id="Curve2D_1s04d"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -329, -70, 0, 0, 0, 0, -203, -62, 0, 0, 0, 0, -95, -57, 0, 0, 0, 0, -18, -54, 0, 0, 0, 0, 41, -45, 0, 0, 0, 0, 120, -33, 0, 0, 0, 0, 165, -6, 0, 0, 0, 0, 173, 14, 0, 0, 0, 0, 180, 50, 0, 0, 0, 0, 186, 97)
 }
@@ -23,7 +23,7 @@ position = Vector2(295, 260)
 texture = ExtResource("1_754f4")
 
 [node name="Path2D" type="Path2D" parent="Cinta int"]
-curve = SubResource("Curve2D_24sgl")
+curve = SubResource("Curve2D_1s04d")
 
 [node name="Cinta ext" type="Sprite2D" parent="."]
 position = Vector2(459, 316)

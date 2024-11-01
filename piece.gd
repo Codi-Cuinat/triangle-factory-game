@@ -16,3 +16,5 @@ func _ready() -> void:
 func _copy_path_points(source_path: Path2D):
 	var curve = source_path.curve
 	$Path2D.curve = curve.duplicate()  # Copia la curva completa al Path2D de Piece
+	$Path2D.get_children()[0].progress_ratio = 0
+	
