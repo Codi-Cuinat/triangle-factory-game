@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://rk8ocuy4873a"]
+[gd_scene load_steps=7 format=3 uid="uid://rk8ocuy4873a"]
 
 [ext_resource type="Script" path="res://piece.gd" id="1_wh8dl"]
+[ext_resource type="Script" path="res://collision_shape_2d.gd" id="2_aknky"]
 [ext_resource type="Script" path="res://path_follow_2d.gd" id="2_ph8mh"]
 [ext_resource type="Texture2D" uid="uid://ctymsnc2au20m" path="res://Assets/Circle.png" id="3_pbsx1"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_h68bq"]
+radius = 28.0713
+
 [sub_resource type="Curve2D" id="Curve2D_cykkh"]
 
-[node name="Piece" type="Node2D"]
+[node name="Piece" type="Area2D"]
 script = ExtResource("1_wh8dl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h68bq")
+script = ExtResource("2_aknky")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_cykkh")
@@ -18,3 +26,5 @@ script = ExtResource("2_ph8mh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
 texture = ExtResource("3_pbsx1")
+
+[connection signal="collide" from="CollisionShape2D" to="." method="_on_collision_shape_2d_collide"]

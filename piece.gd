@@ -18,3 +18,8 @@ func _copy_path_points(source_path: Path2D):
 	$Path2D.curve = curve.duplicate()  # Copia la curva completa al Path2D de Piece
 	$Path2D.get_children()[0].progress_ratio = 0
 	
+
+
+func _on_collision_shape_2d_collide() -> void:
+	
+	pass # Replace with function body.
