@@ -10,14 +10,9 @@
 script = ExtResource("1_hx1mx")
 piece_scene = Array[PackedScene]([ExtResource("2_0cxu1")])
 
-[node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2(0, 322)
-
 [node name="GeneradorInt" type="Sprite2D" parent="."]
 position = Vector2(359, 227)
 texture = ExtResource("1_8q5mt")
-
-[node name="PiecesGroup" type="Node2D" parent="."]
 
 [node name="Cinta" parent="." instance=ExtResource("4_llge1")]
 position = Vector2(203, 202)

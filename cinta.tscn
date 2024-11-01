@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1h2ktrb28qe2"]
+[gd_scene load_steps=5 format=3 uid="uid://d1h2ktrb28qe2"]
 
 [ext_resource type="Texture2D" uid="uid://lx34xo7dqhmp" path="res://Assets/Cinta Int.png" id="1_754f4"]
 [ext_resource type="Texture2D" uid="uid://dcqcxipu4ktw7" path="res://Assets/Cinta Ext.png" id="2_0dqv4"]
-[ext_resource type="Script" path="res://path_follow_2d.gd" id="2_nbgtu"]
 
 [sub_resource type="Curve2D" id="Curve2D_apinl"]
 _data = {
@@ -25,11 +24,6 @@ texture = ExtResource("1_754f4")
 
 [node name="Path2D" type="Path2D" parent="Cinta int"]
 curve = SubResource("Curve2D_24sgl")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Cinta int/Path2D"]
-position = Vector2(-329, -70)
-rotation = 0.063407
-script = ExtResource("2_nbgtu")
 
 [node name="Cinta ext" type="Sprite2D" parent="."]
 position = Vector2(459, 316)

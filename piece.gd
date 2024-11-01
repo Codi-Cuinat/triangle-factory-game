@@ -1,16 +1,18 @@
 extends Node2D
+class_name Piece
 
 @export var nom: String;
 @export var speed = 50
+@export var external_path: Path2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	print("??")
+	if external_path:
+		print("funcionas")
+		_copy_path_points(external_path)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#var velocity = Vector2(1, 0)
-	#position += velocity * speed * delta
-	#position.x = clamp(position.x, 0, screensize.x)
-	pass
+# Función para copiar puntos de otro Path2D
+func _copy_path_points(source_path: Path2D):
+	var curve = source_path.curve
+	$Path2D.curve = curve.duplicate()  # Copia la curva completa al Path2D de Piece
