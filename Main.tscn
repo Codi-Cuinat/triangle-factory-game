@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5c23c38alwgc"]
+
+[ext_resource type="Texture2D" uid="uid://cg7kga8bd6ffg" path="res://Assets/Layer 1.png" id="1_hkfj6"]
+[ext_resource type="PackedScene" uid="uid://dmeqr58a8ctj1" path="res://GeneradorExt.tscn" id="2_bnp1n"]
+[ext_resource type="Script" path="res://generador.gd" id="3_i6wno"]
+[ext_resource type="PackedScene" uid="uid://dcgru03krrarx" path="res://GeneradorInt.tscn" id="3_wklqc"]
+[ext_resource type="PackedScene" uid="uid://dd3eb2e1csd0q" path="res://pieces/circle.tscn" id="4_3hkbh"]
+
+[node name="Node2D" type="Node"]
+
+[node name="Fons" type="Sprite2D" parent="."]
+position = Vector2(740, 636)
+texture = ExtResource("1_hkfj6")
+metadata/_edit_lock_ = true
+
+[node name="Generador1Int" parent="." instance=ExtResource("3_wklqc")]
+position = Vector2(1, 508)
+script = ExtResource("3_i6wno")
+spawn_point = Vector2(0, 350)
+piece_scene = Array[PackedScene]([ExtResource("4_3hkbh")])
+
+[node name="PiecesGroup" type="Node2D" parent="Generador1Int"]
+
+[node name="Generador1Ext" parent="Generador1Int" instance=ExtResource("2_bnp1n")]
