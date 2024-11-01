@@ -1,7 +1,6 @@
-extends Node2D
+extends PathFollow2D
 
-@export var nom: String;
-@export var speed = 50
+var speed = 0.3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +9,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#var velocity = Vector2(1, 0)
-	#position += velocity * speed * delta
-	#position.x = clamp(position.x, 0, screensize.x)
-	pass
+	progress_ratio += delta * speed
+	
+# This method will be called to destroy the piece
+func _on_timeout():
+	queue_free()  # This will remove the piece from the scene
