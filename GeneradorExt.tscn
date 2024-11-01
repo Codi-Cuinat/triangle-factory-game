@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmeqr58a8ctj1"]
-
-[ext_resource type="Texture2D" uid="uid://bn3048k1tyqed" path="res://Assets/Generador Ext.png" id="2_wydgp"]
-
-[node name="Node" type="Node2D"]
-
-[node name="GeneradorExt" type="Sprite2D" parent="."]
-position = Vector2(87, 361)
-texture = ExtResource("2_wydgp")

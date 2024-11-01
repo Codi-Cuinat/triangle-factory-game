@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1h2ktrb28qe2"]
+
+[ext_resource type="Texture2D" uid="uid://lx34xo7dqhmp" path="res://Assets/Cinta Int.png" id="1_754f4"]
+[ext_resource type="Texture2D" uid="uid://dcqcxipu4ktw7" path="res://Assets/Cinta Ext.png" id="2_0dqv4"]
+
+[node name="Cinta" type="Node2D"]
+
+[node name="Cinta int" type="Sprite2D" parent="."]
+position = Vector2(295, 260)
+texture = ExtResource("1_754f4")
+
+[node name="Cinta ext" type="Sprite2D" parent="."]
+position = Vector2(459, 316)
+texture = ExtResource("2_0dqv4")
+
+[node name="Pos0" type="Node2D" parent="."]
+position = Vector2(-34, 187)
+
+[node name="Pos1" type="Node2D" parent="."]
+position = Vector2(412, 225)
+
+[node name="Pos2" type="Node2D" parent="."]
+position = Vector2(473, 275)
+
+[node name="Pos3" type="Node2D" parent="."]
+position = Vector2(478, 351)

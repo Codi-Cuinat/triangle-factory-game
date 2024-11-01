@@ -1,13 +1,12 @@
 extends Node2D
 
-@export var spawn_point: Vector2
 @export var piece_scene: Array[PackedScene]
 
 
 func spawn_piece():
 	var p = piece_scene[0].instantiate()
 	$PiecesGroup.add_child(p)
-	p.position = spawn_point
+	p.position = $SpawnPoint.position
 	
 
 # Called when the node enters the scene tree for the first time.
