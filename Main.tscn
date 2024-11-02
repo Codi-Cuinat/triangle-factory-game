@@ -6,22 +6,11 @@
 [node name="Node2D" type="Node"]
 
 [node name="Fons" type="Sprite2D" parent="."]
-position = Vector2(740, 636)
+position = Vector2(960.5, 537)
+scale = Vector2(1.29838, 0.844584)
 texture = ExtResource("1_hkfj6")
 metadata/_edit_lock_ = true
 
 [node name="Generador" parent="." instance=ExtResource("3_wklqc")]
 position = Vector2(2, 74)
-scale = Vector2(0.5, 0.5)
-
-[node name="Generador2" parent="." instance=ExtResource("3_wklqc")]
-position = Vector2(1470, 87)
-scale = Vector2(-0.5, 0.5)
-
-[node name="Generador3" parent="." instance=ExtResource("3_wklqc")]
-position = Vector2(-1, 671)
-scale = Vector2(0.5, 0.5)
-
-[node name="Generador4" parent="." instance=ExtResource("3_wklqc")]
-position = Vector2(5, 404)
 scale = Vector2(0.5, 0.5)

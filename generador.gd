@@ -2,12 +2,10 @@ extends Node2D
 
 @export var piece_scene: Array[PackedScene]
 
-
 func spawn_piece():
 	var piece = piece_scene[0].instantiate() as Piece
 	# Accede al Path2D de cinta
-	piece.external_path = $"Cinta/Cinta int/Path2D"
-
+	
 	$"Cinta/Cinta int".add_child(piece)
 	
 

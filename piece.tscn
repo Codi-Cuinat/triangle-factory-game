@@ -1,30 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://rk8ocuy4873a"]
+[gd_scene load_steps=5 format=3 uid="uid://rk8ocuy4873a"]
 
 [ext_resource type="Script" path="res://piece.gd" id="1_wh8dl"]
-[ext_resource type="Script" path="res://collision_shape_2d.gd" id="2_aknky"]
-[ext_resource type="Script" path="res://path_follow_2d.gd" id="2_ph8mh"]
+[ext_resource type="Curve2D" uid="uid://bagn2puuj6klg" path="res://cinta_move.tres" id="2_sl73y"]
 [ext_resource type="Texture2D" uid="uid://ctymsnc2au20m" path="res://Assets/Circle.png" id="3_pbsx1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h68bq"]
-radius = 28.0713
+[sub_resource type="CircleShape2D" id="CircleShape2D_r0prl"]
+radius = 29.1548
 
-[sub_resource type="Curve2D" id="Curve2D_cykkh"]
-
-[node name="Piece" type="Area2D"]
+[node name="Piece" type="Node2D"]
 script = ExtResource("1_wh8dl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_h68bq")
-script = ExtResource("2_aknky")
-
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_cykkh")
+curve = ExtResource("2_sl73y")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-329, -70)
+rotation = 0.063407
 loop = false
-script = ExtResource("2_ph8mh")
 
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D" groups=["piece"]]
+position = Vector2(332.774, 49.0124)
+rotation = -0.063407
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
+position = Vector2(-327, -70)
+shape = SubResource("CircleShape2D_r0prl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/Area2D/CollisionShape2D"]
+position = Vector2(-2, 0)
+rotation = 0.063407
+scale = Vector2(1, 1)
 texture = ExtResource("3_pbsx1")
 
-[connection signal="collide" from="CollisionShape2D" to="." method="_on_collision_shape_2d_collide"]
+[connection signal="area_entered" from="Path2D/PathFollow2D/Area2D" to="." method="_on_area_2d_area_entered"]

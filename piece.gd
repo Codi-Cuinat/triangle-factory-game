@@ -1,25 +1,22 @@
 extends Node2D
 class_name Piece
 
+signal collide
+
 @export var nom: String;
-@export var speed = 50
-@export var external_path: Path2D
+@export var speed = 0.3
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	print("??")
-	if external_path:
-		print("funcionas")
-		_copy_path_points(external_path)
-
-# Función para copiar puntos de otro Path2D
-func _copy_path_points(source_path: Path2D):
-	var curve = source_path.curve
-	$Path2D.curve = curve.duplicate()  # Copia la curva completa al Path2D de Piece
-	$Path2D.get_children()[0].progress_ratio = 0
-	
+func _process(delta: float) -> void:
+	$Path2D/PathFollow2D.progress_ratio += delta * speed
 
 
-func _on_collision_shape_2d_collide() -> void:
-	
-	pass # Replace with function body.
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("I've collided")
+	print(area.get_groups())
+	if area.is_in_group("piece"):
+		print("collided piece")
+	if area.is_in_group("machine"):
+		print("collided machine")
+		print("awdawd")
+		collide.emit()
+		queue_free()
