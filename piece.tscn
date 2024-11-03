@@ -11,6 +11,8 @@ radius = 29.1548
 script = ExtResource("1_wh8dl")
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2(0, -19.7485)
+scale = Vector2(1, 1.20359)
 curve = ExtResource("2_sl73y")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
