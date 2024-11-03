@@ -21,7 +21,6 @@ loop = false
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D" groups=["piece"]]
 position = Vector2(332.774, 49.0124)
 rotation = -0.063407
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
 position = Vector2(-327, -70)
@@ -30,7 +29,6 @@ shape = SubResource("CircleShape2D_r0prl")
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/Area2D/CollisionShape2D"]
 position = Vector2(-2, 0)
 rotation = 0.063407
-scale = Vector2(1, 1)
 texture = ExtResource("3_pbsx1")
 
 [connection signal="area_entered" from="Path2D/PathFollow2D/Area2D" to="." method="_on_area_2d_area_entered"]

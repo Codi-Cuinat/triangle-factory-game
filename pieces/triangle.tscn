@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cal355yreu02g"]
+
+[ext_resource type="PackedScene" uid="uid://rk8ocuy4873a" path="res://piece.tscn" id="1_7yfao"]
+[ext_resource type="Texture2D" uid="uid://bjifj87i0d022" path="res://Assets/Triangle.png" id="2_cfmrn"]
+
+[node name="Piece" instance=ExtResource("1_7yfao")]
+
+[node name="Sprite2D" parent="Path2D/PathFollow2D/Area2D/CollisionShape2D" index="0"]
+texture = ExtResource("2_cfmrn")

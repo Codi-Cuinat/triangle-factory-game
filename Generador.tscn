@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://uicnig00gdnr"]
+[gd_scene load_steps=7 format=3 uid="uid://uicnig00gdnr"]
 
 [ext_resource type="Texture2D" uid="uid://bl5ml4uuwiabv" path="res://Assets/Generador Int.png" id="1_8q5mt"]
 [ext_resource type="Script" path="res://generador.gd" id="1_hx1mx"]
 [ext_resource type="PackedScene" uid="uid://dd3eb2e1csd0q" path="res://pieces/circle.tscn" id="2_0cxu1"]
+[ext_resource type="PackedScene" uid="uid://cal355yreu02g" path="res://pieces/triangle.tscn" id="2_116ou"]
 [ext_resource type="Texture2D" uid="uid://bn3048k1tyqed" path="res://Assets/Generador Ext.png" id="2_wydgp"]
-[ext_resource type="PackedScene" uid="uid://d1h2ktrb28qe2" path="res://Cinta.tscn" id="4_llge1"]
+[ext_resource type="PackedScene" uid="uid://d1h2ktrb28qe2" path="res://cinta.tscn" id="4_llge1"]
 
 [node name="Generador" type="Node2D"]
 script = ExtResource("1_hx1mx")
-piece_scene = Array[PackedScene]([ExtResource("2_0cxu1")])
+expected_piece = ExtResource("2_116ou")
+unexpected_pieces = Array[PackedScene]([ExtResource("2_0cxu1")])
 
 [node name="GeneradorInt" type="Sprite2D" parent="."]
 position = Vector2(359, 227)
@@ -22,7 +24,7 @@ position = Vector2(87, 361)
 texture = ExtResource("2_wydgp")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.725
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
