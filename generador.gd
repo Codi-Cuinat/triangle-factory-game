@@ -7,6 +7,8 @@ extends Node2D
 func spawn_piece():
 	if should_spawn_unexpected_piece():
 		spawn_unexpected_piece()
+		# The worker has to take action(or not)
+		$Worker.handle_unexpected_piece()
 	else:
 		spawn_expected_piece()
 	
