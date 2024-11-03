@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bisa8biax4pw7"]
+[gd_scene load_steps=4 format=3 uid="uid://bisa8biax4pw7"]
 
 [ext_resource type="Script" path="res://worker.gd" id="1_vrmix"]
 [ext_resource type="Texture2D" uid="uid://lpbbnh2rtpks" path="res://Assets/Worker Guess.png" id="2_5678n"]
+[ext_resource type="FontFile" uid="uid://crapebg202g5o" path="res://Assets/Fonts/calibri-regular.ttf" id="3_w1o0r"]
 
 [node name="Worker" type="Node2D"]
 script = ExtResource("1_vrmix")
@@ -15,6 +16,16 @@ offset_top = -186.0
 offset_right = 124.0
 offset_bottom = -111.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_w1o0r")
 text = "3 hours to go home..."
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="LabelExperience" type="Label" parent="."]
+offset_left = 56.0
+offset_top = -91.0
+offset_right = 96.0
+offset_bottom = -68.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_w1o0r")
+text = "0/0"

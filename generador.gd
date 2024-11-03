@@ -29,7 +29,7 @@ func should_spawn_unexpected_piece() -> bool:
 func _on_unexpected_piece_removed(piece: Piece):
 	# TODO: cal mirar si la peça es del grup de les unexpected, segurament segons el nom de expected_piece name o aixi.
 	# De fet la propipa peca ens pot dir si es o no expected potser, marcantla amb piece.unexpected per exemple?
-	worker.increase_removed_unexpected_pieces()  
+	worker._on_removed_unexpected_pieces()  
 	piece.queue_free()
 	unexpected_piece_active = false # Permitir que se genere otra pieza inesperada en el futuro
 	
