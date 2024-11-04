@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://uicnig00gdnr"]
+[gd_scene load_steps=10 format=3 uid="uid://uicnig00gdnr"]
 
 [ext_resource type="Texture2D" uid="uid://bl5ml4uuwiabv" path="res://Assets/Generador Int.png" id="1_8q5mt"]
 [ext_resource type="Script" path="res://generador.gd" id="1_hx1mx"]
 [ext_resource type="PackedScene" uid="uid://dd3eb2e1csd0q" path="res://pieces/circle.tscn" id="2_0cxu1"]
 [ext_resource type="PackedScene" uid="uid://cal355yreu02g" path="res://pieces/triangle.tscn" id="2_116ou"]
 [ext_resource type="Texture2D" uid="uid://bn3048k1tyqed" path="res://Assets/Generador Ext.png" id="2_wydgp"]
-[ext_resource type="PackedScene" uid="uid://d1h2ktrb28qe2" path="res://cinta.tscn" id="4_llge1"]
+[ext_resource type="PackedScene" uid="uid://d1h2ktrb28qe2" path="res://Cinta.tscn" id="4_llge1"]
 [ext_resource type="Texture2D" uid="uid://d2n5h7846kvxt" path="res://Assets/Indicador Circle.png" id="7_sr0u8"]
+[ext_resource type="PackedScene" uid="uid://de1dra8un2dmn" path="res://btn_arrow_right.tscn" id="8_88m3h"]
+[ext_resource type="PackedScene" uid="uid://d3l5d3e4k12u6" path="res://btn_arrow_left.tscn" id="8_m0lyr"]
 
 [node name="Generador" type="Node2D"]
 script = ExtResource("1_hx1mx")
@@ -32,5 +34,17 @@ autostart = true
 position = Vector2(159.501, 257.583)
 scale = Vector2(1.00742, 1.00288)
 texture = ExtResource("7_sr0u8")
+
+[node name="ControlButtonLeft" parent="." instance=ExtResource("8_m0lyr")]
+offset_left = 11.2909
+offset_top = 286.357
+offset_right = 11.2909
+offset_bottom = 286.357
+
+[node name="ControlButtonRight" parent="." instance=ExtResource("8_88m3h")]
+offset_left = 56.8478
+offset_top = 296.952
+offset_right = 56.8478
+offset_bottom = 296.952
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

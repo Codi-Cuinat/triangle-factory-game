@@ -7,12 +7,12 @@ const WORKER_BY_LVL = {
 	0: {
 		"sentence": "man what the fuck",
 		"texture": preload("res://Assets/Worker Tired.png"),
-		"lvlUpReqExp": 5
+		"lvlUpReqExp": 2
 	},
 	1: {
 		"sentence": "i guess we doing circles now",
 		"texture": preload("res://Assets/Worker Guess.png"),
-		"lvlUpReqExp": 6
+		"lvlUpReqExp": 3
 	},
 	2: {
 		"sentence": "a circle?? in the triangle factory?? how queer!!\nive never seen such a thing- i must inquire about\n this further with my supervisor post-hastel!!",
@@ -21,9 +21,9 @@ const WORKER_BY_LVL = {
 }
 
 var default_texture: Texture;
-var level: int = 0
-var experience: int = 0
-var removed_unexpected_pieces: int = 0
+var level: int = 0;
+var experience: int = 0;
+var removed_unexpected_pieces: int = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -49,11 +49,14 @@ func _on_removed_unexpected_pieces() -> void:
 	
 func increase_experience():
 	experience += 1
-	if level <= WORKER_BY_LVL.size() and experience >= WORKER_BY_LVL[level].lvlUpReqExp:
+	if can_level_up() and experience >= WORKER_BY_LVL[level].lvlUpReqExp:
 		level += 1
 	update_experience_label()
 
 
 func update_experience_label():
-	var nextRequiredExp = WORKER_BY_LVL[level+1].lvlUpReqExp if WORKER_BY_LVL.size() <= level else WORKER_BY_LVL[level].lvlUpReqExp
+	var nextRequiredExp = WORKER_BY_LVL[level].lvlUpReqExp if can_level_up() else -1
 	$LabelExperience.text = str(experience) + "/" + str(nextRequiredExp)
+
+func can_level_up():
+	return "lvlUpReqExp" in WORKER_BY_LVL[level]

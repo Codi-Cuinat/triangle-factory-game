@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck7ednqjwyntp"]
+
+[ext_resource type="Texture2D" uid="uid://b651c6464ypwa" path="res://Assets/Contador To-Do.png" id="1_drvty"]
+[ext_resource type="Script" path="res://contador.gd" id="1_kkajw"]
+[ext_resource type="FontFile" uid="uid://bbm66etf3m1eb" path="res://Assets/Fonts/xkcd-script.ttf" id="3_5rggo"]
+[ext_resource type="Texture2D" uid="uid://bjifj87i0d022" path="res://Assets/Triangle.png" id="3_f0oqs"]
+
+[node name="Contador" type="Node2D"]
+script = ExtResource("1_kkajw")
+
+[node name="SpriteContador" type="Sprite2D" parent="."]
+texture = ExtResource("1_drvty")
+
+[node name="SpritePiece" type="Sprite2D" parent="."]
+position = Vector2(-64.593, -22.6759)
+rotation = -0.0680678
+scale = Vector2(0.495515, 0.495515)
+texture = ExtResource("3_f0oqs")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.945
+offset_top = 3.965
+offset_right = 42.945
+offset_bottom = 38.965
+grow_horizontal = 2
+rotation = -0.0733038
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5rggo")
+theme_override_font_sizes/font_size = 26
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
